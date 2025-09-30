@@ -1,0 +1,215 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      home: CustomPage(),
+      debugShowCheckedModeBanner: false,
+    );
+  }
+}
+
+class CustomPage extends StatelessWidget {
+  const CustomPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        color: Colors.white,
+        child: Stack(
+          children: [
+            // Back button with gray circle
+            Positioned(
+            top: 16,
+            left: 16,
+            child: Container(
+              height: 30,   // smaller circle
+              width: 30,    // smaller circle
+              decoration: BoxDecoration(
+                color: Color(0xFFEFF1F5),
+                shape: BoxShape.circle,
+              ),
+              child: const Center(
+                child: Icon(
+                  Icons.arrow_back_ios_new,
+                  size: 16,   // smaller icon
+                  color: Colors.black,
+                ),
+              ),
+            ),
+          ),
+
+            // Top bar right icons
+            Positioned(
+              top: 16,
+              right: 80,
+              child: const Icon(Icons.share_outlined, size: 20, color: Colors.black),
+            ),
+            Positioned(
+              top: 16,
+              right: 50,
+              child: const Icon(Icons.bookmark_border, size: 20, color: Colors.black),
+            ),
+            Positioned(
+              top: 16,
+              right: 20,
+              child: const Icon(Icons.more_horiz, size: 20, color: Colors.black),
+            ),
+
+            // Gray box
+            Padding(
+              padding: const EdgeInsets.only(top: 60, left: 16, right: 16),
+              child: Container(
+                height: 150,
+                decoration: BoxDecoration(
+                  color: const Color(0xFFEFF1F5),
+                  borderRadius: BorderRadius.circular(16),
+                ),
+              ),
+            ),
+
+            // Title
+            const Padding(
+              padding: EdgeInsets.only(top: 230, left: 16),
+              child: Text(
+                "Medium Title",
+                style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black),
+              ),
+            ),
+
+            // Subtitle description
+            const Padding(
+              padding: EdgeInsets.only(top: 265, left: 16),
+              child: Text(
+                "Description text about something on this page that\ncan be long or short.",
+                style: TextStyle(color: Colors.black54, fontSize: 16),
+              ),
+            ),
+
+            // Buttons
+            Padding(
+              padding: const EdgeInsets.only(top: 330, left: 16),
+              child: Row(
+                children: [
+                  Container(
+                    height: 40,
+                    width: 80,
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: const Center(
+                      child: Text(
+                        "Book",
+                        style: TextStyle(color: Colors.white, fontSize: 16),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 12),
+                  Container(
+                    height: 40,
+                    width: 100,
+                    decoration: BoxDecoration(
+                      color: Color(0xFFEFF1F5),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: const Center(
+                      child: Text(
+                        "Message",
+                        style: TextStyle(color: Colors.black, fontSize: 16),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            // List Items
+            const Padding(
+              padding: EdgeInsets.only(top: 390, left: 16),
+              child: Text(
+                "First List Title",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                    color: Colors.black),
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.only(top: 415, left: 16),
+              child: Text(
+                "1st subtitle",
+                style: TextStyle(color: Colors.black54, fontSize: 16),
+              ),
+            ),
+
+            const Padding(
+              padding: EdgeInsets.only(top: 460, left: 16),
+              child: Text(
+                "Second List Title",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                    color: Colors.black),
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.only(top: 485, left: 16),
+              child: Text(
+                "2nd subtitle",
+                style: TextStyle(color: Colors.black54, fontSize: 16),
+              ),
+            ),
+
+            const Padding(
+              padding: EdgeInsets.only(top: 530, left: 16),
+              child: Text(
+                "Third List Title",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                    color: Colors.black),
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.only(top: 555, left: 16),
+              child: Text(
+                "3rd subtitle",
+                style: TextStyle(color: Colors.black54, fontSize: 16),
+              ),
+            ),
+
+            const Padding(
+              padding: EdgeInsets.only(top: 600, left: 16),
+              child: Text(
+                "Fourth List Title",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                    color: Colors.black),
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.only(top: 625, left: 16),
+              child: Text(
+                "4th subtitle",
+                style: TextStyle(color: Colors.black54, fontSize: 16),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
