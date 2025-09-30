@@ -1,0 +1,213 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: ExpandedDemo(),
+      debugShowCheckedModeBanner: false,
+    );
+  }
+}
+
+class ExpandedDemo extends StatelessWidget {
+  const ExpandedDemo({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        color: Colors.white,
+        child: Stack(
+          children: [
+ 
+            Padding(
+              padding: EdgeInsets.only(top: 20, left: 16, right: 16),
+              child: Container(
+                height: 50,
+                decoration: BoxDecoration(
+                  color: Color(0xFFEFF1F5),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+
+                child: Row(
+                  children: const [
+                    SizedBox(width: 16),
+                    Icon(Icons.search, color: Color(0xFFA0A0A0)),
+                    SizedBox(width: 10),
+                    Text(
+                      'Search',
+                      style: TextStyle(
+                        color: Color(0xFFA0A0A0),
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+
+            Padding(
+              padding: EdgeInsets.only(top: 90, left: 16, right: 16),
+              child: Row(
+                children: List.generate(
+                  20,
+                  (index) => Container(
+                    width: 15,
+                    height: 1,
+                    color: Colors.black.withOpacity(0.3),
+                    margin: EdgeInsets.only(right: 4),
+                  ),
+                ),
+              ),
+            ),
+
+            Padding(
+              padding: EdgeInsets.only(top: 120, left: 16),
+              child: Text(
+                'Medium Title',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 24,
+                ),
+              ),
+            ),
+
+            Padding(
+              padding: EdgeInsets.only(top: 180, left: 16),
+              child: Row(
+                children: [
+                  Container(
+                    height: 100,
+                    width: 180,
+                    decoration: BoxDecoration(
+                      color: Color(0xFFEFF1F5),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+
+                    padding: EdgeInsets.all(12),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Icon(Icons.holiday_village_outlined, 
+                        size: 28, color: Colors.black),
+                        SizedBox(height: 8),
+                        Text(
+                          "Houses",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  SizedBox(width: 16),
+                  Container(
+                    height: 100,
+                    width: 190,
+                    decoration: BoxDecoration(
+                      color: Color(0xFFEFF1F5),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+
+                    padding: EdgeInsets.all(12),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Icon(Icons.maps_home_work_outlined, 
+                        size: 28, color: Colors.black),
+                        SizedBox(height: 8),
+                        Text(
+                          "Rooms",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            Padding(
+              padding: EdgeInsets.only(top: 300, left: 16),
+              child: Row(
+                children: [
+                  Container(
+                    height: 100,
+                    width: 180,
+                    decoration: BoxDecoration(
+                      color: Color(0xFFEFF1F5),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+
+                    padding: EdgeInsets.all(12),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Icon(Icons.chair_outlined, size: 28, color: Colors.black),
+                        SizedBox(height: 8),
+                        Text(
+                          "Cabins",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  SizedBox(width: 16),
+                  Container(
+                    height: 100,
+                    width: 190,
+                    decoration: BoxDecoration(
+                      color: Color(0xFFEFF1F5),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+
+                    padding:  EdgeInsets.all(12),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Icon(Icons.forest_outlined, size: 28, color: Colors.black),
+                        SizedBox(height: 8),
+                        Text(
+                          "Apartments",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
