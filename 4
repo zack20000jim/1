@@ -1,0 +1,186 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: ExpandedDemo(),
+      debugShowCheckedModeBanner: false,
+    );
+  }
+}
+
+class ExpandedDemo extends StatelessWidget {
+  const ExpandedDemo({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        color: Colors.white,
+        child: Stack(
+          children: [
+  
+            Positioned(
+              top: 16,
+              left: 16,
+              child: const Icon(
+                Icons.arrow_back_ios_new,
+                size: 20,
+                color: Colors.black,
+              ),
+            ),
+
+            Positioned(
+              top: 16,
+              right: 80,
+              child: const Icon(
+                Icons.share_outlined,
+                size: 20,
+                color: Colors.black,
+              ),
+            ),
+
+            Positioned(
+              top: 16,
+              right: 50,
+              child: const Icon(
+                Icons.bookmark_border,
+                size: 20,
+                color: Colors.black,
+              ),
+            ),
+
+            Positioned(
+              top: 16,
+              right: 20,
+              child: const Icon(
+                Icons.more_horiz,
+                size: 20,
+                color: Colors.black,
+              ),
+            ),
+
+            Padding(
+              padding: EdgeInsets.only(top: 70, left: 16),
+              child: Text(
+                "Section title",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+              ),
+            ),
+
+            Padding(
+              padding: EdgeInsets.only(top: 100, left: 16, right: 16),
+              child: Text(
+                "Description text about something on this page that can be long or short.",
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.black87,
+                ),
+              ),
+            ),
+
+            Padding(
+              padding: EdgeInsets.only(top: 150, left: 16, right: 16),
+              child: Container(
+                height: 250,
+                decoration: BoxDecoration(
+                  color: Color(0xFFEFF1F5),
+                  borderRadius: BorderRadius.circular(16),
+                ),
+              ),
+            ),
+
+            Padding(
+              padding: EdgeInsets.only(top: 420),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Column(
+                    children: [
+                      Container(
+                        height: 56,
+                        width: 56,
+                        decoration: BoxDecoration(
+                          color: Colors.black,
+                          shape: BoxShape.circle,
+                        ),
+                        child: Icon(Icons.bookmark_border, color: Colors.white),
+                      ),
+                      SizedBox(height: 8),
+                      Text("Save", style: TextStyle(fontSize: 14)),
+                    ],
+                  ),
+
+                  Column(
+                    children: [
+                      Container(
+                        height: 56,
+                        width: 56,
+                        decoration: BoxDecoration(
+                          color: Colors.black,
+                          shape: BoxShape.circle,
+                        ),
+                        child: Icon(Icons.share_outlined, color: Colors.white),
+                      ),
+                       SizedBox(height: 8),
+                      Text("Share", style: TextStyle(fontSize: 14)),
+                    ],
+                  ),
+
+                  Column(
+                    children: [
+                      Container(
+                        height: 56,
+                        width: 56,
+                        decoration: BoxDecoration(
+                          color: Colors.black,
+                          shape: BoxShape.circle,
+                        ),
+                        child: Icon(Icons.message_outlined, color: Colors.white),
+                      ),
+                      
+                      SizedBox(height: 8),
+                      Text(
+                        "Message", 
+                        style: TextStyle(fontSize: 14)),
+                    ],
+                  ),
+
+                  Column(
+                    children: [
+                      Container(
+                        height: 56,
+                        width: 56,
+                        decoration: BoxDecoration(
+                          color: Colors.black,
+                          shape: BoxShape.circle,
+                        ),
+                        child: Icon(Icons.more_horiz, color: Colors.white),
+                      ),
+
+                      SizedBox(height: 8),
+                      Text(
+                        "More", 
+                        style: TextStyle(fontSize: 14)),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
