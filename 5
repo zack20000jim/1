@@ -1,0 +1,166 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: ChatDemo(),
+    );
+  }
+}
+
+class ChatDemo extends StatelessWidget {
+  const ChatDemo({super.key});
+
+  Widget leftBubble(String text) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const SizedBox(width: 16),
+        Container(
+          margin: const EdgeInsets.only(top: 8, left: 50),
+          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+          decoration: BoxDecoration(
+            color: Color(0xFFEFF1F5),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Text(text, style: const TextStyle(color: Colors.black)),
+        ),
+        const Spacer(),
+      ],
+    );
+  }
+
+  Widget rightBubble(String text) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Spacer(),
+        Container(
+          margin: EdgeInsets.only(top: 8, right: 16),
+          padding: EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+          decoration: BoxDecoration(
+            color: Colors.black,
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Text(text, style: TextStyle(color: Colors.white)),
+        ),
+      ],
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        color: Colors.white,
+        child: Stack(
+          children: [
+ 
+            Positioned(
+              top: 16,
+              left: 16,
+              child: const Icon(Icons.arrow_back_ios_new,
+                  size: 20, color: Colors.black),
+            ),
+
+            Positioned(
+              top: 16,
+              right: 80,
+              child: const Icon(Icons.share_outlined,
+                  size: 20, color: Colors.black),
+            ),
+
+            Positioned(
+              top: 16,
+              right: 50,
+              child: const Icon(Icons.bookmark_border,
+                  size: 20, color: Colors.black),
+            ),
+
+            Positioned(
+              top: 16,
+              right: 20,
+              child: const Icon(Icons.more_horiz,
+                  size: 20, color: Colors.black),
+            ),
+
+            Padding(
+              padding: const EdgeInsets.only(left: 16, top: 165),
+              child: Container(
+                height: 40,
+                width: 40,
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),
+                color: Color(0xFFEFF1F5),
+              ),
+              ),
+            ),
+
+             Padding(
+              padding: const EdgeInsets.only(left: 16, top: 40),
+              child: Container(
+                height: 40,
+                width: 40,
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),
+                color: Color(0xFFEFF1F5),
+              ),
+              ),
+            ),
+
+            Padding(
+              padding: EdgeInsets.only(top: 60, bottom: 80),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    leftBubble("I hope you’re enjoying your day as much as I do"),
+                    leftBubble("Everything is amazing"),
+                    leftBubble("Weather is nice"),
+                    rightBubble("Everything is amazing"),
+                    rightBubble("Weather is nice"),
+                    leftBubble("I hope you’re enjoying your day as much as I do"),
+                    leftBubble("Everything is amazing"),
+                    leftBubble("Weather is nice"),
+                    rightBubble("Everything is amazing"),
+                    rightBubble("Weather is nice"),
+                  ],
+                ),
+              ),
+            ),
+
+            Positioned(
+              bottom: -3,
+              left: 16,
+              right: 16,
+              child: Container(
+                height: 50,
+                decoration: BoxDecoration(
+                  color:  Color(0xFFEFF1F5),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+
+                padding: EdgeInsets.symmetric(horizontal: 16),
+                child: Row(
+                  children: const [
+                    Text(
+                      "Message",
+                      style: TextStyle(color: Colors.black54, fontSize: 16),
+                    ),
+                    Spacer(),
+                    Icon(Icons.arrow_upward, color: Colors.black54),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
