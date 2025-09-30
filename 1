@@ -1,0 +1,378 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: ExpandedDemo(),
+      debugShowCheckedModeBanner: false,
+      
+    );
+  }
+}
+
+class ExpandedDemo extends StatelessWidget {
+  const ExpandedDemo({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        color: Colors.white, 
+        child: Stack(
+          children: [
+            Positioned(
+              top: 16,
+              left: 16,
+              child: const  Icon(
+                Icons.arrow_back_ios_new,
+                size: 20,
+                color: Colors.black,
+              ),
+            ),
+
+            Positioned(
+              top: 16,
+              right: 80,
+              child: const Icon(
+                Icons.share,
+                size:20,
+                color: Colors.black,
+              ),
+            ),
+
+            Positioned(
+              top: 16,
+              right: 50,
+              child: const Icon(
+                Icons.bookmark_border,
+                size: 20,
+                color: Colors.black,
+              ),
+            ),
+
+            Positioned(
+              top: 16,
+              right: 20,
+              child: const Icon(
+                Icons.more_horiz,
+                size: 20,
+                color: Colors.black,
+              ),
+            ),
+
+            Padding(
+              padding: const EdgeInsets.only(top:50),
+              child: Expanded(
+                child: Container(
+                  color: Color(0xFFEFF1F5),
+                  height: 200,
+                ),
+              ),
+            ),
+
+            Padding(
+              padding: const EdgeInsets.only(top: 200, left: 16),
+              child: Container(
+                height: 30,
+                width: 40,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Color(0xFFA09CAB),
+                ),
+                child:Center(
+                child: Text('1/4',
+                style: TextStyle(color: Colors.white),
+                ),
+                ),
+                ),
+            ),
+
+            Padding(
+              padding: const EdgeInsets.only(top: 270, left: 16,),
+              child: Expanded(
+                child: const Icon(
+                  Icons.star,
+                  color: Colors.black,
+                ),
+                ),
+                ),
+
+            Padding(
+              padding: const EdgeInsets.only(top: 270, left: 50),
+              child: Text(
+                '4.95',
+                style: TextStyle(color: Colors.black,fontWeight:FontWeight.bold,
+                fontSize: 18),
+              ),
+            ),
+
+            Padding(
+              padding: const EdgeInsets.only(top: 270, left: 100),
+              child: Text('22 reviews',
+              style: TextStyle(color: Color.fromARGB(255, 233, 233, 233), fontSize: 18),
+              ),
+            ),
+
+            Padding(
+              padding: const EdgeInsets.only(top: 300, left: 16),
+              child: Text('Medium Title',
+              style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, 
+              fontSize: 24)
+              ),
+            ),
+
+            Padding(
+              padding: const EdgeInsets.only(top: 340, left:16),
+              child: Container(
+                height: 60,
+                width: 200,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.white,
+                  border: Border.all(
+                    color: Color.fromARGB(255, 233, 233, 233),
+                  ),
+                ),
+                
+
+                child:Row(
+                  children: const[
+                    SizedBox(width:16),
+                    Icon(Icons.cottage_outlined, color: Colors.black),
+                    SizedBox(width:10),
+                    Text('5 beds', style: TextStyle(color: Colors.black, fontSize: 18,
+                    fontWeight: FontWeight.bold),
+                    ),
+                  ],
+             
+              ),
+            ),
+            ),
+            
+
+          Padding(
+            padding: const EdgeInsets.only(top:340, left:230),
+            child: Container(
+              height: 60,
+              width: 200,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.white,
+                border: Border.all(color: Color.fromARGB(255, 233, 233, 233 )
+                 ),
+                  ),
+
+                  child:Row(
+                    children: const [
+                      SizedBox(width:16),
+                      Icon(Icons.weekend_outlined,color: Colors.black,),
+                      SizedBox(width:10),
+                      Text('2 bath',
+                      style: TextStyle(color:Colors.black, fontSize: 18, fontWeight: FontWeight.bold),
+                      )
+                    ],
+                  )
+          )
+          ),
+
+            Padding(
+              padding: const EdgeInsets.only(top: 410, left:16),
+              child: Container(
+                height: 60,
+                width: 200,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.white,
+                  border: Border.all(
+                  color:  Color.fromARGB(255, 233, 233, 233),
+                  )
+                ),
+
+                child: Row(
+                  children: const [
+                    SizedBox(width:16),
+                    Icon(Icons.crop_free),
+                    SizedBox(width:10),
+                    Text('70 meters', 
+                    style: TextStyle(
+                      color: Colors.black, fontWeight: FontWeight.bold, fontSize: 18),
+                      )
+                  ],
+                ),
+              ),
+            ),
+
+            Padding(
+              padding: const EdgeInsets.only(top:410, left:230),
+              child: Container(
+                height:60,
+                width: 200,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(color: Color.fromARGB(255, 233, 233, 233 )
+                  ),
+                  ),
+
+                  child: Row(
+                    children: const [
+                      SizedBox(width: 16),
+                      Icon(Icons.groups_outlined),
+                      SizedBox(width:10),
+                      Text('6 people',
+                      style: TextStyle(color: Colors.black,
+                      fontSize: 18, fontWeight: FontWeight.bold),
+                      )
+                    ],
+                  )
+
+                ),
+                ),
+                
+                Padding(
+                  padding: const EdgeInsets.only(top: 490, left: 16),
+                  child: Container(
+                    height:50,
+                    width:50,
+                    decoration: BoxDecoration(
+                      color: Color(0xFFEFF1F5),
+                      borderRadius: BorderRadius.circular(30),
+                    )
+                    
+                  ),
+                ),
+
+                Padding(
+                  padding: const EdgeInsets.only(top:490, left: 80),
+                  child: Text(
+                    'Vova Parkhomchuk',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 24,
+                    ),  
+                  ),
+                ),
+
+                Padding(
+                  padding: const EdgeInsets.only(top: 520, left: 80),
+                  child: Text(
+                    'World-renowned startup founder',
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 233, 233, 233), 
+                      fontSize: 20,
+                    ),
+                  ),
+                ),
+
+                Padding(
+                  padding: const EdgeInsets.only(top:550, left: 16),
+                  child: Text(
+                    'Description text about something on this',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                    ),
+                  ),
+                ),
+
+                Padding(
+                  padding: const EdgeInsets.only(top:570, left: 16),
+                  child: Text(
+                    'page that can be long or short. It can be',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                    ),
+                  ),
+                ),
+
+                Padding(
+                  padding: const EdgeInsets.only(top:590, left: 16),
+                  child: Text(
+                    'pretty long and explaining information and',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                    ),
+                  ),
+                ),
+
+                Padding(
+                  padding: const EdgeInsets.only(top: 590, left: 370),
+                  child: Text(
+                    'More',
+                    style: TextStyle(
+                      color: Colors.black, fontSize: 24, fontWeight: FontWeight.bold,
+                      shadows: [
+                        Shadow(
+                          offset: Offset(-15,0),
+                          blurRadius: 2,
+                          color: Colors.white,
+                        )
+                      ]
+                    ),
+                  ),
+                ),
+
+                Padding(
+                  padding: const EdgeInsets.only(top: 640, left: 16),
+                  child: Text(
+                    '\$25/day',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 24,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+
+                Padding(
+                  padding: const EdgeInsets.only(top: 675, left: 16),
+                  child: Text(
+                    '\$700 total',
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 233, 233, 233),
+                      fontSize: 24, 
+                    ),
+                  ),
+                ),
+
+                Padding(
+                  padding: const EdgeInsets.only(top: 630, left: 200),
+                  child: Container(
+                    height: 70,
+                    width: 230,
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Book',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 30,
+                          ),
+                        )
+                      ],
+                    )
+                  ),
+                ),
+          ],
+        )
+
+      ),
+    );
+  }
+}
